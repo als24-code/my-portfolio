@@ -32,7 +32,7 @@ const PROJECTS = [
     id: "ancestro",
     title: "Ancestro - Clean energy solutions",
     description:
-      "Admin dashboard for an e-commerce platform with analytics and orders.",
+      "Clean-energy subscription platform focused on making solar and battery systems accessible without a large upfront purchase.",
     image: "/ancestro.png",
     tags: ["Next.js", "Tailwind", "Vercel"],
     categories: ["Web", "Professional"],
@@ -42,7 +42,7 @@ const PROJECTS = [
     id: "mediapilot",
     title: "Mediapilot - Streaming infrastructure service",
     description:
-      "A React Native app to track Xiaomi tags with map integration.",
+      "Service that helps content creators turn their existing video content into their own monetized over-the-top media platform.",
     image: "/mediapilot-3.png",
     tags: ["React", "Express.js", "FFmpeg", "Redis"],
     categories: ["Web", "Full Stack", "Professional"],
@@ -52,7 +52,7 @@ const PROJECTS = [
     id: "coconut-beach",
     title: "Coconut Beach Hotels",
     description:
-      "A responsive landing page with smooth scroll animations and modern UI.",
+      "Mock site for online travel booking for a fictional hotel chain.",
     image: "/coconut-beach.png",
     tags: ["Next.js", "Tailwind", "GSAP"],
     categories: ["Web", "Personal"],

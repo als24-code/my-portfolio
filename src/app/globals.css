@@ -345,7 +345,6 @@ button {
 .btn--icon-lg {
   width: var(--icon-circle-lg);
   height: var(--icon-circle-lg);
-  background-color: var(--color-primary-200);
 }
 .btn--icon-xl {
   width: var(--icon-circle-xl);
@@ -793,7 +792,12 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-12) var(--space-6) var(--space-6);
+  cursor: pointer;
 }
+.more-card:nth-child(3n) {
+  grid-column: span 1;
+}
+
 .more-card::after {
   content: "";
   position: absolute;
