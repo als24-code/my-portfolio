@@ -26,7 +26,7 @@ const PROJECTS = [
     image: "/eijent.png",
     tags: ["React Native", "BLE"],
     categories: ["Mobile", "Professional"],
-    href: "www.eijent.com",
+    href: "https://www.eijent.com/",
   },
   {
     id: "ancestro",
@@ -141,7 +141,11 @@ export default function Projects() {
                   ))}
                 </ul>
 
-                <a href={project.href} className="link project-card__link">
+                <a
+                  href={project.href}
+                  target="__blank"
+                  className="link project-card__link"
+                >
                   View Project
                   <FiArrowRight className="link__icon" aria-hidden="true" />
                 </a>
