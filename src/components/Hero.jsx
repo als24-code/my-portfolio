@@ -1,4 +1,5 @@
 // components/Hero/Hero.jsx
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -62,7 +63,11 @@ export default function Hero() {
             </ul>
           </nav>
 
-          <a href="/cv.pdf" download className="btn btn--primary btn--sm">
+          <a
+            href="/Alina_Soomro_CV.pdf"
+            download
+            className="btn btn--primary btn--sm"
+          >
             Download CV
             <FiDownload className="btn__icon" aria-hidden="true" />
           </a>
@@ -88,7 +93,11 @@ export default function Hero() {
                 View My Projects
                 <FiArrowRight className="btn__icon" aria-hidden="true" />
               </a>
-              <a href="/cv.pdf" download className="btn btn--secondary">
+              <a
+                href="/Alina_Soomro_CV.pdf"
+                download
+                className="btn btn--secondary"
+              >
                 Download CV
                 <FiDownload className="btn__icon" aria-hidden="true" />
               </a>
@@ -139,7 +148,6 @@ export default function Hero() {
             <span className="hero__media-shape" aria-hidden="true" />
             <div className="hero__image-wrap">
               <Image
-                // src="/hero-image-1.jpg"
                 src="/hero-image-3.png"
                 alt="Laptop on a desk next to a small plant"
                 fill
