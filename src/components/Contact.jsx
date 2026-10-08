@@ -24,8 +24,8 @@ const CONTACT_DETAILS = [
 ];
 
 const SOCIALS = [
-  { label: "LinkedIn", href: "https://linkedin.com", Icon: FaLinkedinIn },
-  { label: "GitHub", href: "https://github.com", Icon: FaGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/alina-mehdi-59308413", Icon: FaLinkedinIn },
+  { label: "GitHub", href: "https://github.com/als24-code/", Icon: FaGithub },
   { label: "Email", href: "mailto:soomroalina24@gmail.com", Icon: MdOutlineEmail },
 ];
 
