@@ -12,20 +12,28 @@ import {
 } from "react-icons/fa6";
 import { SiNextdotjs } from "react-icons/si";
 import { MdOutlineEmail } from "react-icons/md";
-import { FiArrowRight, FiDownload, FiArrowDown } from "react-icons/fi";
+import { FiArrowRight, FiArrowDown, FiArrowDownRight } from "react-icons/fi";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  // { label: "Contact", href: "#contact" },
 ];
 
 const SOCIALS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/alina-mehdi-59308413a", Icon: FaLinkedinIn },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/alina-mehdi-59308413a",
+    Icon: FaLinkedinIn,
+  },
   { label: "GitHub", href: "https://github.com/als24-code/", Icon: FaGithub },
-  { label: "Email", href: "mailto:soomroalina24@gmail.com", Icon: MdOutlineEmail },
+  {
+    label: "Email",
+    href: "mailto:soomroalina24@gmail.com",
+    Icon: MdOutlineEmail,
+  },
 ];
 
 const TECH_STACK = [
@@ -63,13 +71,9 @@ export default function Hero() {
             </ul>
           </nav>
 
-          <a
-            href="/Alina_Soomro_CV.pdf"
-            download
-            className="btn btn--primary btn--sm"
-          >
-            Download CV
-            <FiDownload className="btn__icon" aria-hidden="true" />
+          <a href="/#contact" className="btn btn--primary btn--sm">
+            Let&apos;s Connect
+            <FiArrowDownRight className="btn__icon" aria-hidden="true" />
           </a>
         </div>
       </header>
@@ -82,7 +86,7 @@ export default function Hero() {
             <h1 className="hero__name">Alina Soomro</h1>
             <h2 className="hero__role">Software Engineer</h2>
             <p className="hero__description">
-              With 2.5+ years of experience, I develop intuitive web and mobile
+              With 2.5+ years of experience, I develope intuitive web and mobile
               applications that are fast, reliable, and thoughtfully engineered
               to solve real-world problems. I&apos;m passionate about creating
               seamless experiences and always eager to learn and grow.
@@ -93,13 +97,9 @@ export default function Hero() {
                 View My Projects
                 <FiArrowRight className="btn__icon" aria-hidden="true" />
               </a>
-              <a
-                href="/Alina_Soomro_CV.pdf"
-                download
-                className="btn btn--secondary"
-              >
-                Download CV
-                <FiDownload className="btn__icon" aria-hidden="true" />
+              <a href="/#contact" className="btn btn--secondary">
+                Let&apos;s Connect
+                <FiArrowDownRight className="btn__icon" aria-hidden="true" />
               </a>
             </div>
 
