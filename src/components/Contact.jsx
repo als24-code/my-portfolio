@@ -2,13 +2,15 @@
 
 // components/Contact/Contact.jsx
 import { useState } from "react";
-import { FaLinkedinIn, FaGithub, FaEnvelope, FaPhone, FaMapLocation } from "react-icons/fa6";
+import { BiMapPin, BiPhone  } from "react-icons/bi";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import {
   FiUser,
   FiMail,
   FiFileText,
   FiArrowRight,
 } from "react-icons/fi";
+import { LuMapPin } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
 
 const FORM_FIELDS = [
@@ -18,9 +20,9 @@ const FORM_FIELDS = [
 ];
 
 const CONTACT_DETAILS = [
-  { label: "Email", value: "soomroalina24@gmail.com", Icon: FaEnvelope },
-  { label: "Phone", value: "+49 174 296 7173", Icon: FaPhone },
-  { label: "Location", value: "Berlin, Germany", Icon: FaMapLocation },
+  { label: "Email", value: "soomroalina24@gmail.com", Icon: MdOutlineEmail },
+  { label: "Phone", value: "+49 174 296 7173", Icon: BiPhone },
+  { label: "Location", value: "Berlin, Germany", Icon: LuMapPin },
 ];
 
 const SOCIALS = [
@@ -113,7 +115,7 @@ export default function Contact() {
             {CONTACT_DETAILS.map(({ label, value, Icon }) => (
               <div key={label} className="contact-info__item">
                 <span
-                  className="btn btn--tertiary btn--icon btn--icon-lg btn--static"
+                  className="btn btn--tertiary btn--icon btn--static"
                   aria-hidden="true"
                 >
                   <Icon />
