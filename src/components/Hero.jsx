@@ -88,8 +88,7 @@ export default function Hero() {
             <p className="hero__description">
               With 2.5+ years of experience, I develope intuitive web and mobile
               applications that are fast, reliable, and thoughtfully engineered
-              to solve real-world problems. I&apos;m passionate about creating
-              seamless experiences and always eager to learn and grow.
+              to solve real-world problems.
             </p>
 
             <div className="hero__actions">

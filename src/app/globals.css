@@ -891,7 +891,7 @@ button {
 
 .timeline {
   --timeline-dot: 12px;
-  --timeline-date-width: 200px;
+  --timeline-date-width: 280px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -923,9 +923,10 @@ button {
 .timeline__meta {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-7);
   padding-top: var(--space-4);
 }
+
 .timeline__marker {
   position: relative;
   z-index: 1;
@@ -938,13 +939,10 @@ button {
 }
 .timeline__date {
   font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
   color: var(--color-text-accent);
 }
 
-.timeline__card {
-  max-width: 720px;
-}
 .timeline__role {
   font-size: var(--fs-lg);
   font-weight: var(--fw-semibold);
