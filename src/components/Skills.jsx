@@ -1,56 +1,6 @@
-// components/About/About.jsx
-import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaNodeJs, FaRegLightbulb } from "react-icons/fa6";
-import {
-  SiNextdotjs,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiTailwindcss,
-} from "react-icons/si";
-import { FiCode, FiUsers, FiBarChart } from "react-icons/fi";
+import { FEATURES, TECH_STACK_SKILLS } from "@/data";
 
-const FEATURES = [
-  {
-    id: "clean-code",
-    title: "Clean Code",
-    text: "Maintainable, scalable, efficient",
-    Icon: FiCode,
-  },
-  {
-    id: "problem-solving",
-    title: "Problem Solving",
-    text: "Find simple better solutions",
-    Icon: FaRegLightbulb,
-  },
-  {
-    id: "team-player",
-    title: "Team Player",
-    text: "Communicate and collaborate",
-    Icon: FiUsers,
-  },
-  {
-    id: "always-learning",
-    title: "Always Learning",
-    text: "Stay curious, keep improving",
-    Icon: FiBarChart,
-  },
-];
-
-const TECH_STACK = [
-  { label: "React", Icon: FaReact, tone: "react" },
-  { label: "Next.js", Icon: SiNextdotjs, tone: "solid" },
-  { label: "React Native", Icon: FaReact, tone: "react" },
-  { label: "HTML5", Icon: FaHtml5, tone: "primary" },
-  { label: "CSS3", Icon: FaCss3Alt, tone: "primary" },
-  { label: "Git", Icon: FaGitAlt, tone: "primary" },
-  { label: "Node.js", Icon: FaNodeJs, tone: "node" },
-  { label: "Express", Icon: SiExpress, tone: "dark" },
-  { label: "MongoDB", Icon: SiMongodb, tone: "mongo" },
-  { label: "Firebase", Icon: SiFirebase, tone: "firebase" },
-  { label: "Tailwind CSS", Icon: SiTailwindcss, tone: "tailwind" },
-];
-
-export default function About() {
+export default function Skills() {
   return (
     <section className="section section--auto" id="about">
       <span className="blob blob--bottom-right" aria-hidden="true" />
@@ -101,7 +51,7 @@ export default function About() {
         {/* ---------- Tech stack ---------- */}
         <h3 className="about__subtitle">Tech Stack</h3>
         <ul className="tech-grid">
-          {TECH_STACK.map(({ label, Icon, tone }, i) => (
+          {TECH_STACK_SKILLS.map(({ label, Icon, tone }, i) => (
             <li key={`${label}-${i}`}>
               <span
                 className={`tech-grid__item tech-grid__item--${tone} btn btn--tertiary btn--icon btn--static`}

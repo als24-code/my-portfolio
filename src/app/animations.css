@@ -1,0 +1,7 @@
+.prereveal,
+.reveal,
+.prereveal-upward,
+.prereveal-downward {
+  opacity: 0;
+  visibility: hidden;
+}

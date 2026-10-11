@@ -1,66 +1,15 @@
 "use client";
 
-// components/Projects/Projects.jsx
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { FiArrowRight, FiPlus } from "react-icons/fi";
-
-const FILTERS = ["All", "Web", "Mobile", "Professional", "Personal"];
-
-const PROJECTS = [
-  {
-    id: "fantom",
-    title: "Fantom Hypnotik - Smart-home lighting control",
-    description:
-      "A full system for hypnotik lights. A cross platform mobile app to control them and admin dashboard for managing app users.",
-    image: "/fantom.png",
-    tags: ["Next.js", "Nest.js", "MongoDB", "Firebase", "AWS"],
-    categories: ["Mobile", "Web", "Professional"],
-    href: "https://play.google.com/store/apps/details?id=ca.cgagnier.hypnoyiknativeandroid&hl=en",
-  },
-  {
-    id: "eijent",
-    title: "Eijent - AI powered transcription app",
-    description:
-      "An app to transcribe meetings/calls and then summarize/edit the audio using Eijent hardware connected via bluetooth.",
-    image: "/eijent.png",
-    tags: ["React Native", "BLE"],
-    categories: ["Mobile", "Professional"],
-    href: "https://www.eijent.com/",
-  },
-  {
-    id: "ancestro",
-    title: "Ancestro - Clean energy solutions",
-    description:
-      "Clean-energy subscription platform focused on making solar and battery systems accessible without a large upfront purchase.",
-    image: "/ancestro.png",
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    categories: ["Web", "Professional"],
-    href: "#",
-  },
-  {
-    id: "mediapilot",
-    title: "Mediapilot - Streaming infrastructure service",
-    description:
-      "Service that helps content creators turn their existing video content into their own monetized over-the-top media platform.",
-    image: "/mediapilot-3.png",
-    tags: ["React", "Express.js", "FFmpeg", "Redis"],
-    categories: ["Web", "Full Stack", "Professional"],
-    href: "https://mediapilot.io/",
-  },
-  {
-    id: "coconut-beach",
-    title: "Coconut Beach Hotels",
-    description:
-      "Mock site for online travel booking for a fictional hotel chain.",
-    image: "/coconut-beach.png",
-    tags: ["Next.js", "Tailwind", "GSAP"],
-    categories: ["Web", "Personal"],
-    href: "https://coconut-beach-hotels-two.vercel.app/",
-  },
-];
+import { FILTERS, PROJECTS } from "@/data";
+import useCommonAnimation from "@/hooks/useCommonAnimation";
 
 export default function Projects() {
+  const sectionRef = useRef(null);
+  useCommonAnimation(sectionRef, 0.8);
+
   const [activeFilter, setActiveFilter] = useState("All");
 
   const visibleProjects =
@@ -68,19 +17,17 @@ export default function Projects() {
       ? PROJECTS
       : PROJECTS.filter((p) => p.categories.includes(activeFilter));
 
+
   return (
-    <section className="section section--auto" id="projects">
+    <section className="section section--auto" id="projects" ref={sectionRef}>
       <span className="blob blob--bottom-left" aria-hidden="true" />
 
       <div className="projects container">
         {/* ---------- Heading + filters ---------- */}
-        <div className="section-heading">
+        <div className="section-heading prereveal-upward">
           <div className="section-heading__content">
             <span className="section-heading__eyebrow">My Projects</span>
-            <h2 className="section-heading__title">
-              Selected Work
-              {/* <br /> I&apos;ve built */}
-            </h2>
+            <h2 className="section-heading__title">Selected Work</h2>
             <p className="section-heading__text">
               Here are some professional and personal projects I&apos;ve worked
               on, from full-stack applications to landing-pages and mobile apps.
@@ -111,7 +58,7 @@ export default function Projects() {
         </div>
 
         {/* ---------- Grid ---------- */}
-        <div className="projects__grid">
+        <div className="projects__grid prereveal-downward">
           {visibleProjects.map((project) => (
             <article key={project.id} className="card project-card">
               <div className="project-card__media">

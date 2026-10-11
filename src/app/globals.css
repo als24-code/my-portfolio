@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./animations.css";
 
 /* ==========================================================================
    GLOBALS.CSS  —  BEM, token-driven
@@ -383,10 +384,17 @@ button {
 
 /* ---------- Header ---------- */
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 10;
   height: var(--header-height);
 }
+
+.header-cloudbg {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
 .header__inner {
   display: flex;
   align-items: center;
@@ -415,16 +423,21 @@ button {
   color: var(--color-ink-700);
   transition: color var(--transition-fast);
 }
-.nav__link:hover,
-.nav__link--active {
+
+.nav__link:hover {
   color: var(--color-primary-500);
 }
+
+/* .nav__link--active {
+  color: var(--color-primary-600);
+} */
 
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
   z-index: 1;
   padding-block: var(--space-8) var(--space-9);
+  margin-top: var(--header-height);
 }
 .hero__grid {
   display: grid;
@@ -472,7 +485,6 @@ button {
   gap: var(--space-4);
 }
 
-/* Hero media (blob-masked image) */
 .hero__media {
   position: relative;
   justify-self: center;
@@ -1060,7 +1072,7 @@ button {
 
 .form__label {
   position: absolute;
-  top: calc(var(--space-2) * -0.75 );
+  top: calc(var(--space-2) * -0.75);
   left: var(--space-1);
   z-index: 1;
   padding-inline: var(--space-1);

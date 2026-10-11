@@ -1,97 +1,38 @@
-// components/Hero/Hero.jsx
-
 import Image from "next/image";
-import Link from "next/link";
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa6";
-import { SiNextdotjs } from "react-icons/si";
-import { MdOutlineEmail } from "react-icons/md";
-import { FiArrowRight, FiArrowDown, FiArrowDownRight } from "react-icons/fi";
-
-const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  // { label: "Contact", href: "#contact" },
-];
-
-const SOCIALS = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/alina-mehdi-59308413a",
-    Icon: FaLinkedinIn,
-  },
-  { label: "GitHub", href: "https://github.com/als24-code/", Icon: FaGithub },
-  {
-    label: "Email",
-    href: "mailto:soomroalina24@gmail.com",
-    Icon: MdOutlineEmail,
-  },
-];
-
-const TECH_STACK = [
-  { label: "React", Icon: FaReact },
-  { label: "Next.js", Icon: SiNextdotjs },
-  { label: "React Native", Icon: FaReact },
-  { label: "HTML5", Icon: FaHtml5 },
-  { label: "CSS3", Icon: FaCss3Alt },
-  { label: "Git", Icon: FaGitAlt },
-];
+import { FiArrowRight, FiArrowDownRight } from "react-icons/fi";
+import { useEffect, useRef } from "react";
+import { reveal, upwardsReveal, useAnimation } from "@/lib/animations";
+import { SOCIALS } from "@/data";
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    useAnimation(section, upwardsReveal);
+    useAnimation(section, reveal);
+  }, []);
+
   return (
-    <section className="section" id="home">
+    <section className={`section`} id="about" ref={sectionRef}>
       {/* ---------- Background Shapes ---------- */}
       <span className="blob blob--top-right" aria-hidden="true" />
       <span className="blob blob--bottom-left" aria-hidden="true" />
-
-      {/* ---------- Header ---------- */}
-      <header className="header">
-        <div className="container header__inner">
-          <Link href="/" className="header__logo">
-            {"<AS/>"}
-          </Link>
-
-          <nav className="nav" aria-label="Primary">
-            <ul className="nav__list">
-              {NAV_LINKS.map(({ label, href }) => (
-                <li key={label}>
-                  <a href={href} className="nav__link">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <a href="/#contact" className="btn btn--primary btn--sm">
-            Let&apos;s Connect
-            <FiArrowDownRight className="btn__icon" aria-hidden="true" />
-          </a>
-        </div>
-      </header>
 
       {/* ---------- Hero ---------- */}
       <div className="hero container">
         <div className="hero__grid">
           <div className="hero__content">
-            <p className="hero__greeting">Hi, I&apos;m</p>
-            <h1 className="hero__name">Alina Soomro</h1>
-            <h2 className="hero__role">Software Engineer</h2>
-            <p className="hero__description">
+            <p className="hero__greeting prereveal-upward">Hi, I&apos;m</p>
+            <h1 className="hero__name prereveal-upward">Alina Soomro</h1>
+            <h2 className="hero__role prereveal-upward">Software Engineer</h2>
+            <p className="hero__description prereveal-upward">
               With 2.5+ years of experience, I develope intuitive web and mobile
               applications that are fast, reliable, and thoughtfully engineered
               to solve real-world problems.
             </p>
 
-            <div className="hero__actions">
+            <div className="hero__actions prereveal-upward">
               <a href="#projects" className="btn btn--primary">
                 View My Projects
                 <FiArrowRight className="btn__icon" aria-hidden="true" />
@@ -102,7 +43,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <ul className="hero__socials">
+            <ul className="hero__socials prereveal-upward">
               {SOCIALS.map(({ label, href, Icon }) => (
                 <li key={label}>
                   <a
@@ -119,7 +60,7 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div className="hero__media">
+          <div className="hero__media reveal">
             <svg
               width="0"
               height="0"
@@ -155,7 +96,6 @@ export default function Hero() {
                 className="hero__image"
               />
             </div>
-            {/* dots unchanged */}
           </div>
         </div>
       </div>

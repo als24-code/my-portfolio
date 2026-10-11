@@ -1,38 +1,15 @@
 "use client";
 
-// components/Contact/Contact.jsx
-import { useState } from "react";
-import { BiMapPin, BiPhone  } from "react-icons/bi";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
-import {
-  FiUser,
-  FiMail,
-  FiFileText,
-  FiArrowRight,
-} from "react-icons/fi";
-import { LuMapPin } from "react-icons/lu";
-import { MdOutlineEmail } from "react-icons/md";
-
-const FORM_FIELDS = [
-  { id: "name", label: "Full Name", type: "text", placeholder: "Your name", Icon: FiUser },
-  { id: "email", label: "Email Address", type: "email", placeholder: "yourname@gmail.com", Icon: FiMail },
-  { id: "message", label: "Message", type: "textarea", placeholder: "Your message", Icon: FiFileText },
-];
-
-const CONTACT_DETAILS = [
-  { label: "Email", value: "soomroalina24@gmail.com", Icon: MdOutlineEmail },
-  { label: "Phone", value: "+49 174 296 7173", Icon: BiPhone },
-  { label: "Location", value: "Berlin, Germany", Icon: LuMapPin },
-];
-
-const SOCIALS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/alina-mehdi-59308413a", Icon: FaLinkedinIn },
-  { label: "GitHub", href: "https://github.com/als24-code/", Icon: FaGithub },
-  { label: "Email", href: "mailto:soomroalina24@gmail.com", Icon: MdOutlineEmail },
-];
+import { useRef, useState } from "react";
+import useCommonAnimation from "@/hooks/useCommonAnimation";
+import { CONTACT_DETAILS, FORM_FIELDS, SOCIALS_CONTACT } from "@/data";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Contact() {
   const [status, setStatus] = useState("");
+
+  const sectionRef = useRef(null);
+  useCommonAnimation(sectionRef, 0.8);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -45,7 +22,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="section section--auto" id="contact">
+    <section className="section section--auto" id="contact" ref={sectionRef}>
       <span className="blob blob--bottom-right" aria-hidden="true" />
       <div className="dot-grid dot-grid--bottom-right" aria-hidden="true">
         {Array.from({ length: 9 }).map((_, i) => (
@@ -55,18 +32,18 @@ export default function Contact() {
 
       <div className="contact container">
         {/* ---------- Heading ---------- */}
-        <div className="section-heading">
+        <div className="section-heading prereveal-upward">
           <div className="section-heading__content">
             <span className="section-heading__eyebrow">Get in touch</span>
             <h2 className="section-heading__title">Let&apos;s work together</h2>
             <p className="section-heading__text">
-              I&apos;m always open to new opportunities, collaborations or just a
-              friendly chat. Feel free to reach out!
+              I&apos;m always open to new opportunities, collaborations or just
+              a friendly chat. Feel free to reach out!
             </p>
           </div>
         </div>
 
-        <div className="contact__grid">
+        <div className="contact__grid prereveal-downward">
           {/* ---------- Form ---------- */}
           <form className="card card--padded form" onSubmit={handleSubmit}>
             {FORM_FIELDS.map(({ id, label, type, placeholder, Icon }) => (
@@ -79,7 +56,9 @@ export default function Contact() {
                 </span>
 
                 <div className="form__control">
-                  <label htmlFor={id} className="form__label">{label}</label>
+                  <label htmlFor={id} className="form__label">
+                    {label}
+                  </label>
                   {type === "textarea" ? (
                     <textarea
                       id={id}
@@ -107,7 +86,11 @@ export default function Contact() {
               <FiArrowRight className="btn__icon" aria-hidden="true" />
             </button>
 
-            {status && <p className="form__status" role="status">{status}</p>}
+            {status && (
+              <p className="form__status" role="status">
+                {status}
+              </p>
+            )}
           </form>
 
           {/* ---------- Contact info ---------- */}
@@ -131,7 +114,7 @@ export default function Contact() {
 
             <p className="contact-info__follow">Follow Me</p>
             <ul className="socials">
-              {SOCIALS.map(({ label, href, Icon }) => (
+              {SOCIALS_CONTACT.map(({ label, href, Icon }) => (
                 <li key={label}>
                   <a
                     href={href}
