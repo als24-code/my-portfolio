@@ -43,45 +43,77 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="contact__grid prereveal-downward">
-          {/* ---------- Form ---------- */}
-          <form className="card card--padded form" onSubmit={handleSubmit}>
-            {FORM_FIELDS.map(({ id, label, type, placeholder, Icon }) => (
-              <div key={id} className="form__field">
-                <span
-                  className="form__icon btn btn--tertiary btn--icon-sm"
-                  aria-hidden="true"
-                >
-                  <Icon />
-                </span>
+        {/* ---------- Single card: info panel left, form right ---------- */}
+        <div className="contact__card card prereveal-downward">
+          <aside className="contact-info" aria-label="Contact details">
+            <h3 className="contact-info__title">Contact Information</h3>
+            <p className="contact-info__text">
+              Reach out through any of the channels below.
+            </p>
 
-                <div className="form__control">
-                  <label htmlFor={id} className="form__label">
-                    {label}
-                  </label>
-                  {type === "textarea" ? (
-                    <textarea
-                      id={id}
-                      name={id}
-                      className="form__textarea"
-                      placeholder={placeholder}
-                      required
-                    />
-                  ) : (
-                    <input
-                      id={id}
-                      name={id}
-                      type={type}
-                      className="form__input"
-                      placeholder={placeholder}
-                      required
-                    />
-                  )}
+            <div className="contact-info__list">
+              {CONTACT_DETAILS.map(({ label, value, Icon }) => (
+                <div key={label} className="contact-info__item">
+                  <Icon className="contact-info__icon" aria-hidden="true" />
+                  <div>
+                    <span className="contact-info__label">{label}</span>
+                    <span className="contact-info__value">{value}</span>
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            <div className="contact-info__footer">
+              <p className="contact-info__follow">Follow Me</p>
+              <ul className="socials">
+                {SOCIALS_CONTACT.map(({ label, href, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      className="btn btn--tertiary btn--icon"
+                      aria-label={label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+
+          <form className="form" onSubmit={handleSubmit}>
+            {FORM_FIELDS.map(({ id, label, type, placeholder, full }) => (
+              <div
+                key={id}
+                className={`form__field${full ? " form__field--full" : ""}`}
+              >
+                <label htmlFor={id} className="form__label">
+                  {label}
+                </label>
+                {type === "textarea" ? (
+                  <textarea
+                    id={id}
+                    name={id}
+                    className="form__textarea"
+                    placeholder={placeholder}
+                    required
+                  />
+                ) : (
+                  <input
+                    id={id}
+                    name={id}
+                    type={type}
+                    className="form__input"
+                    placeholder={placeholder}
+                    required
+                  />
+                )}
               </div>
             ))}
 
-            <button type="submit" className="btn btn--primary btn--block">
+            <button type="submit" className="btn btn--primary form__submit">
               Send Message
               <FiArrowRight className="btn__icon" aria-hidden="true" />
             </button>
@@ -92,43 +124,6 @@ export default function Contact() {
               </p>
             )}
           </form>
-
-          {/* ---------- Contact info ---------- */}
-          <aside className="contact-info" aria-label="Contact details">
-            {CONTACT_DETAILS.map(({ label, value, Icon }) => (
-              <div key={label} className="contact-info__item">
-                <span
-                  className="btn btn--tertiary btn--icon btn--static"
-                  aria-hidden="true"
-                >
-                  <Icon />
-                </span>
-                <div>
-                  <span className="contact-info__label">{label}</span>
-                  <span className="contact-info__value">{value}</span>
-                </div>
-              </div>
-            ))}
-
-            <hr className="contact-info__divider" />
-
-            <p className="contact-info__follow">Follow Me</p>
-            <ul className="socials">
-              {SOCIALS_CONTACT.map(({ label, href, Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="btn btn--tertiary btn--icon"
-                    aria-label={label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon aria-hidden="true" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </aside>
         </div>
       </div>
     </section>
