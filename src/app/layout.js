@@ -1,31 +1,47 @@
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { AppProvider } from "@/components/providers/AppProvider";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
-const geistJakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const sans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
-const geistOutfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-});
+const description =
+  "Product designer turning complex problems into clear, considered digital products. Selected work, approach and contact.";
 
 export const metadata = {
-  title: "Alina Soomro Portfolio",
+  title: "AlinaSoomro — Software Engineer",
+  description,
+  openGraph: {
+    title: "AlinaSoomro — Software Engineer",
+    description,
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
+export const viewport = { themeColor: "#0F1115" };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, session }) {
   return (
     <html
       lang="en"
-      className={`${geistOutfit.variable} ${geistJakarta.variable} h-full antialiased`}
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
-        <body className="min-h-full flex flex-col">
-          <Navbar />
-          {children}
-        </body>
+      <body>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }

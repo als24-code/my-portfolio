@@ -1,10 +1,13 @@
+"use client";
 import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  ScrollTrigger.config({ ignoreMobileResize: true });
-}
+gsap.registerPlugin(Draggable, ScrollTrigger, useGSAP);
 
-export { gsap, ScrollTrigger, ScrollSmoother };
+export const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+export { gsap, Draggable, ScrollTrigger, useGSAP };
