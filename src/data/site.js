@@ -344,9 +344,9 @@ export const CASE_STUDIES = {
   p1: {
     meta: [
       ["Client", "Blueprint Studios"],
-      ["Role", "Software Engineer · Frontend"],
+      ["Role", "Software Engineer"],
       ["Timeline", "2025"],
-      ["Platform", "Web"],
+      ["Platform", "Web · Next.js"],
     ],
     blocks: [
       [
@@ -367,9 +367,9 @@ export const CASE_STUDIES = {
   p2: {
     meta: [
       ["Client", "Eijent"],
-      ["Role", "Software Engineer · React Native"],
+      ["Role", "Software Engineer"],
       ["Timeline", "2025–2026"],
-      ["Platform", "iOS · Android · Tablets"],
+      ["Platform", "React Native"],
     ],
     blocks: [
       [
@@ -390,9 +390,9 @@ export const CASE_STUDIES = {
   p3: {
     meta: [
       ["Client", "Ancestro"],
-      ["Role", "Software Engineer · Frontend"],
+      ["Role", "Software Engineer"],
       ["Timeline", "2025–2026"],
-      ["Platform", "Web"],
+      ["Platform", "Web · Next.js"],
     ],
     blocks: [
       [
@@ -413,9 +413,9 @@ export const CASE_STUDIES = {
   p5: {
     meta: [
       ["Client", "Mediapilot.io"],
-      ["Role", "Software Engineer · Frontend"],
+      ["Role", "Software Engineer"],
       ["Timeline", "2023–2025"],
-      ["Platform", "Web · Mobile"],
+      ["Platform", "Web · React.js"],
     ],
     blocks: [
       [
@@ -436,9 +436,9 @@ export const CASE_STUDIES = {
   p6: {
     meta: [
       ["Client", "Fantom Hypnotik"],
-      ["Role", "Software Engineer · Web & Mobile"],
+      ["Role", "Software Engineer "],
       ["Timeline", "2023–2025"],
-      ["Platform", "iOS · Android · Web · IoT"],
+      ["Platform", "Web & Mobile"],
     ],
     blocks: [
       [

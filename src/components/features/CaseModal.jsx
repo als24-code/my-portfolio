@@ -75,9 +75,9 @@ function CaseModalInner({ project }) {
           <p className="modal__eyebrow">
             Case {project.num} / 04 · {project.kind}
           </p>
-          <a href="#work" className="modal__link" onClick={close}>
+          {/* <a href="#work" className="modal__link" onClick={close}>
             Project Link ↗
-          </a>
+          </a> */}
           <button className="modal__close" onClick={close}>
             Close · Esc
           </button>
@@ -93,7 +93,7 @@ function CaseModalInner({ project }) {
           ))}
         </dl>
 
-        <Placeholder label={project.label} className="modal__cover" />
+        <Placeholder img={project.img} label={project.label} className="modal__cover" />
 
         <div className="modal__blocks">
           {BLOCKS.map(([title, description]) => (
