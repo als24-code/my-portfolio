@@ -1,4 +1,3 @@
-/** Splits text into per-character spans for GSAP animation. */
 export function Chars({ text, className = "" }) {
   return (
     <span className={`chars ${className}`} aria-label={text}>

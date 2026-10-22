@@ -247,7 +247,7 @@ export const site = {
   name: "AlinaSoomro",
   role: "Software Engineer",
   location: "Berlin",
-  availability: "Available for work",
+  availability: "Available for full-time",
   email: "soomroalina24@gmail.com",
   year: 2026,
   headline: "I sort out the problem before I touch the code.",
@@ -532,8 +532,8 @@ export const capabilities = [
 ];
 
 export const about = {
-  title: "A developer who asks the questions others skip",
-  body: "I'm a software engineer with over two+ years of experience working on websites, apps, dashboards, and brand identities for startups and growing businesses. I like getting into the details, asking questions others might overlook, and understanding what people actually need before jumping into the implementation. Once I have a clear description, I turn ideas into code that achieves the goal and make sense for the business, too. I enjoy working closely with founders, developers, and product teams, bouncing ideas around, challenging assumptions, and figuring out better ways to do things. Lately, I've also been using AI tools to explore ideas faster and push my technical thinking further, while keeping the decisions and the final result in my own hands.",
+  title: "Building with purpose, not just requirements",
+  body: "I'm a software engineer with 2.5+ years of experience building websites, applications, and dashboards for startups and growing businesses. I look beyond the requirements to understand the problem, challenge assumptions, and ask the questions that lead to better solutions. From shaping ideas to writing production-ready code, I care about building software that works well for people and makes sense for the business. I collaborate closely with designers and product teams to explore ideas, solve problems, and refine the details. I also integrate AI tools into my development workflow to produce faster, explore alternatives, and work through technical challenges — using them to elaborate ideas, not replace them.",
   facts: [
     { k: "Focus", v: "Web · Apps" },
     { k: "Experience", v: "2.5+ years" },
@@ -544,5 +544,14 @@ export const about = {
 
 export const intro = {
   title: "Every problem starts as a mess.",
-  pieces: ["Frame", "Design", "Workflow", "Cloud", "Version"],
+  pieces: [
+    "Hello, World!",
+    "Component.tsx",
+    "State: Updated",
+    "Fetching Data...",
+    "await response",
+    "git commit",
+    "Deploying...",
+    "200: Success",
+  ],
 };
